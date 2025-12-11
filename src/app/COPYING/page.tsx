@@ -168,6 +168,14 @@ d. Nothing in this Public License constitutes or may be interpreted as a limitat
 `;
 
 export default function CopyingPage() {
+  const file = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .process(copyingText);
+
+  const html = String(file);
+  
   return (
     <div>
       <h1 className="fw-bold mb-4">CC BY-NC-ND 4.0 License</h1>
