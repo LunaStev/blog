@@ -6,9 +6,9 @@ import type { NextRequest } from "next/server";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const post = getPostBySlug(slug);
 
@@ -31,7 +31,9 @@ export async function GET(
           {post.meta.title}
         </div>
 
-        <div style={{ fontSize: 32, color: "#6a6258" }}>by LunaStev</div>
+        <div style={{ fontSize: 32, color: "#6a6258" }}>
+          by LunaStev
+        </div>
       </div>
     ),
     {
