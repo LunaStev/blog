@@ -2,12 +2,14 @@ export const runtime = "nodejs";
 
 import { ImageResponse } from "@vercel/og";
 import { getPostBySlug } from "@/lib/posts";
+import type { NextRequest } from "next/server";
 
 export async function GET(
-  request: Request,
-  context: { params: { slug: string } }
+  req: NextRequest,
+  { params }: { params: { slug: string } }
 ) {
-  const slug = context.params.slug;
+  const { slug } = params;
+
   const post = getPostBySlug(slug);
 
   return new ImageResponse(
@@ -25,20 +27,11 @@ export async function GET(
           fontFamily: "Noto Serif KR",
         }}
       >
-        <div
-          style={{
-            fontSize: 54,
-            fontWeight: "bold",
-            color: "#3a352e",
-            marginBottom: 20,
-          }}
-        >
+        <div style={{ fontSize: 54, fontWeight: "bold", color: "#3a352e", marginBottom: 20 }}>
           {post.meta.title}
         </div>
 
-        <div style={{ fontSize: 32, color: "#6a6258" }}>
-          by LunaStev
-        </div>
+        <div style={{ fontSize: 32, color: "#6a6258" }}>by LunaStev</div>
       </div>
     ),
     {
