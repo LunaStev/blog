@@ -5,9 +5,8 @@ import remarkRehype from "remark-rehype";
 import rehypePrism from "rehype-prism-plus";
 import rehypeStringify from "rehype-stringify";
 
-export async function generateMetadata({ params }: any) {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = getPostBySlug(params.slug);
 
   return {
     title: post.meta.title,
@@ -20,20 +19,19 @@ export async function generateMetadata({ params }: any) {
 
 export function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
-export default async function PostPage(props: { params: Promise<{ slug: string }> }) {
-  const { slug } = await props.params;
+export default async function PostPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+
   const post = getPostBySlug(slug);
 
   const file = await unified()
-    .use(remarkParse)                                // Markdown → AST
-    .use(remarkRehype)                               // AST → HTML AST
-    .use(rehypePrism)                                // 🔥 Prism 하이라이트 적용
-    .use(rehypeStringify)                            // HTML AST → HTML
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypePrism)
+    .use(rehypeStringify)
     .process(post.content);
 
   const contentHtml = String(file);
