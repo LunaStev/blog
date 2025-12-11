@@ -5,7 +5,7 @@ import remarkRehype from "remark-rehype";
 import rehypePrism from "rehype-prism-plus";
 import rehypeStringify from "rehype-stringify";
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { slug: string };
