@@ -1,7 +1,7 @@
+export const runtime = "nodejs";
+
 import { ImageResponse } from "@vercel/og";
 import { getPostBySlug } from "@/lib/posts";
-
-export const runtime = "edge";
 
 export async function GET(request: Request, { params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);

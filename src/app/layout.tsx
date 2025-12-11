@@ -2,6 +2,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 import Link from "next/link";
 
+export const metadata = {
+  title: "LunaStev’s Dev Blog",
+  description: "컴파일러, 운영체제, 시스템 프로그래밍 블로그",
+  keywords: ["컴파일러", "시스템 프로그래밍", "OS", "Rust", "Wave", "언어 설계"],
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    title: "LunaStev’s Dev Blog",
+    siteName: "LunaStev Dev Blog",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
