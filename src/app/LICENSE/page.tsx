@@ -395,17 +395,6 @@ export default async function LicensePage() {
   return (
     <div>
       <h1 className="fw-bold mb-4">MPL-2.0 License</h1>
-      <pre
-        style={{
-          whiteSpace: "pre-wrap",
-          background: "#f5f0e3",
-          padding: "20px",
-          borderRadius: "10px",
-          border: "1px solid #e2d7c3",
-          fontSize: "0.95rem",
-          lineHeight: 1.5,
-        }}
-      >
       <article
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: html }}
