@@ -1,3 +1,8 @@
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+
 export const metadata = {
   title: "Content License - LunaStev Blog",
 };
@@ -166,19 +171,10 @@ export default function CopyingPage() {
   return (
     <div>
       <h1 className="fw-bold mb-4">CC BY-NC-ND 4.0 License</h1>
-      <pre
-        style={{
-          whiteSpace: "pre-wrap",
-          background: "#f5f0e3",
-          padding: "20px",
-          borderRadius: "10px",
-          border: "1px solid #e2d7c3",
-          fontSize: "0.95rem",
-          lineHeight: 1.5,
-        }}
-      >
-        {copyingText}
-      </pre>
+      <article
+        className="markdown-body"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </div>
   );
 }
