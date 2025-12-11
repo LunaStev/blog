@@ -167,7 +167,7 @@ d. Nothing in this Public License constitutes or may be interpreted as a limitat
 > Creative Commons may be contacted at [creativecommons.org](http://creativecommons.org).
 `;
 
-export default function CopyingPage() {
+export default async function CopyingPage() {
   const file = await unified()
     .use(remarkParse)
     .use(remarkRehype)
@@ -175,7 +175,7 @@ export default function CopyingPage() {
     .process(copyingText);
 
   const html = String(file);
-  
+
   return (
     <div>
       <h1 className="fw-bold mb-4">CC BY-NC-ND 4.0 License</h1>
