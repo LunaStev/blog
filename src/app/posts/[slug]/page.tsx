@@ -5,7 +5,11 @@ import remarkRehype from "remark-rehype";
 import rehypePrism from "rehype-prism-plus";
 import rehypeStringify from "rehype-stringify";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = getPostBySlug(params.slug);
 
   return {
