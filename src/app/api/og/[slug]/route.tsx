@@ -2,7 +2,6 @@ export const runtime = "nodejs";
 
 import { ImageResponse } from "@vercel/og";
 import { getPostBySlug } from "@/lib/posts";
-import type { NextRequest } from "next/server";
 
 export async function GET(
   req: Request,
