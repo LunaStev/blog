@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "License - LunaStev Blog",
+};
+
+const licenseText = `
 Mozilla Public License Version 2.0
 ==================================
 LunaStev. Blog Project
@@ -372,3 +377,25 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
+`;
+
+export default function LicensePage() {
+  return (
+    <div>
+      <h1 className="fw-bold mb-4">MPL-2.0 License</h1>
+      <pre
+        style={{
+          whiteSpace: "pre-wrap",
+          background: "#f5f0e3",
+          padding: "20px",
+          borderRadius: "10px",
+          border: "1px solid #e2d7c3",
+          fontSize: "0.95rem",
+          lineHeight: 1.5,
+        }}
+      >
+        {licenseText}
+      </pre>
+    </div>
+  );
+}
