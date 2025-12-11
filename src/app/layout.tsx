@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
@@ -46,6 +46,21 @@ export default function RootLayout({
             {children}
           </div>
         </main>
+
+        {/* ----- FOOTER (LICENSE NOTICE) ----- */}
+        <footer className="text-center py-4" style={{ color: "#7a7066", fontSize: "0.9rem" }}>
+          <div>
+            © {new Date().getFullYear()} LunaStev.  
+            Source code licensed under{" "}
+            <a href="/LICENSE" target="_blank">MPL-2.0</a>,  
+            blog content licensed under{" "}
+            <a href="/COPYING" target="_blank">CC BY-NC-ND 4.0</a>.
+          </div>
+
+          <div style={{ marginTop: "4px" }}>
+            Built with Next.js & hosted on Vercel.
+          </div>
+        </footer>
       </body>
     </html>
   );
