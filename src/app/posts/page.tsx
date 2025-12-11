@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
-export default function PostPage() {
+export default function PostsPage() {
   const posts = getAllPosts();
 
   return (

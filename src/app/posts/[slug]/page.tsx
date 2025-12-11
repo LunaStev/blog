@@ -1,3 +1,4 @@
+// src/app/posts/[slug]/page.tsx
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -8,9 +9,10 @@ import rehypeStringify from "rehype-stringify";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   return {
     title: post.meta.title,
@@ -23,11 +25,17 @@ export async function generateMetadata({
 
 export function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
   const post = getPostBySlug(slug);
 
