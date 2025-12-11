@@ -1,3 +1,8 @@
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+
 export const metadata = {
   title: "License - LunaStev Blog",
 };
@@ -379,7 +384,14 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
   defined by the Mozilla Public License, v. 2.0.
 `;
 
-export default function LicensePage() {
+export default async function LicensePage() {
+  const file = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .process(licenseText);
+
+  const html = String(file);
   return (
     <div>
       <h1 className="fw-bold mb-4">MPL-2.0 License</h1>
