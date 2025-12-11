@@ -250,6 +250,15 @@ h1, h2, h3 {
   color: #4d453e;
 }
 
+.markdown-body a {
+  color: #1e4fc3;
+  text-decoration: underline;
+}
+
+.markdown-body a:hover {
+  color: #153a8f;
+}
+
 /* --- 블록 인용문 --- */
 .markdown-body blockquote {
   margin: 20px 0;
