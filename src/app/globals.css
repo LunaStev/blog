@@ -1,0 +1,276 @@
+/* -----------------------------------------------------
+   PRISM TOMORROW THEME (로컬 복사)
+   (Next.js/Tailwind에서 import 불가 → 직접 삽입)
+------------------------------------------------------ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ccc;
+  background: none;
+  text-shadow: none;
+  font-family: "JetBrains Mono", monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 8px;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .15em .3em;
+  border-radius: .3em;
+  background: #2d2d2d;
+  color: #f8f8f2;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.inserted {
+  color: #a7fe00;
+}
+
+.token.bold { font-weight: bold; }
+.token.italic { font-style: italic; }
+.token.entity { cursor: help; }
+
+/* -----------------------------------------------------
+   GLOBAL BASE STYLE
+------------------------------------------------------ */
+
+body {
+  background-color: #faf7ef;          /* 종이 톤 */
+  background-repeat: repeat;
+  font-family: "Noto Serif KR", serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #5b4636;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #362c24;
+}
+
+h1, h2, h3 {
+  color: #3a352e;
+  font-family: "Noto Serif KR", serif;
+}
+
+/* -----------------------------------------------------
+   LAYOUT WRAPPER
+------------------------------------------------------ */
+
+.content-wrapper {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #e5dcc5;
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* -----------------------------------------------------
+   NAVBAR
+------------------------------------------------------ */
+
+.blog-navbar {
+  background: #f5f0e3;
+  border-bottom: 1px solid #e0d8c7;
+}
+
+.blog-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Noto Serif KR", serif;
+  color: #3a352e !important;
+}
+
+.blog-navbar .nav-link {
+  font-size: 1.05rem;
+  color: #5f5447 !important;
+}
+
+.blog-navbar .nav-link:hover {
+  color: #2f2a25 !important;
+}
+
+/* -----------------------------------------------------
+   HOME HEADER
+------------------------------------------------------ */
+
+.blog-header-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  font-family: "Noto Serif KR", serif;
+  color: #3a352e;
+}
+
+.blog-header-desc {
+  color: #7a7066;
+  font-size: 1.2rem;
+}
+
+/* -----------------------------------------------------
+   ABOUT PAGE TEXT
+------------------------------------------------------ */
+
+.blog-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+  color: #403a34;
+}
+
+/* -----------------------------------------------------
+   POST LIST (홈 화면의 글 목록)
+------------------------------------------------------ */
+
+.post-item {
+  padding: 20px;
+  margin-bottom: 12px;
+  border: 1px solid #e7dfc7;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: 0.2s;
+}
+
+.post-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+}
+
+/* -----------------------------------------------------
+   MARKDOWN STYLE (본문)
+------------------------------------------------------ */
+
+.markdown-body {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #3a352e;
+}
+
+.markdown-body h1 {
+  border-bottom: 2px solid #d4c6aa;
+  padding-bottom: 8px;
+  margin-top: 32px;
+}
+
+.markdown-body p {
+  margin-bottom: 1.3rem;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-left: 24px;
+  padding-left: 8px;
+}
+
+/* -----------------------------------------------------
+   CUSTOM PRISM OVERRIDES (Vim/Gruvbox 느낌)
+------------------------------------------------------ */
+
+.markdown-body pre[class*="language-"] {
+  background: #2f3129 !important;       /* 다크 그린/브라운톤 */
+  padding: 16px 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid #444034;
+  margin-bottom: 24px;
+}
+
+.markdown-body pre[class*="language-"] code {
+  background: transparent !important;
+  color: #ffffff !important;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+}
+
+.markdown-body :not(pre) > code {
+  background: #f1ead5;
+  color: #4a3f34;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.92rem;
+}
+
+/* Prism token overrides */
+.token.string { color: #a8e0a5 !important; }
+.token.keyword { color: #82aaff !important; }
+.token.function { color: #ffd580 !important; }
+.token.number { color: #ff9d64 !important; }
+.token.comment { color: #6e6a60 !important; font-style: italic; }
