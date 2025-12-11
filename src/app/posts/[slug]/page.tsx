@@ -5,6 +5,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypePrism from "rehype-prism-plus";
 import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
 
 export async function generateMetadata({
   params,
@@ -43,6 +44,7 @@ export default async function PostPage({
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrism)
+    .use(remarkGfm)
     .use(rehypeStringify)
     .process(post.content);
 
