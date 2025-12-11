@@ -399,7 +399,6 @@ export default async function LicensePage() {
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      </pre>
     </div>
   );
 }
