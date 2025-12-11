@@ -4,7 +4,7 @@ import { ImageResponse } from "@vercel/og";
 import { getPostBySlug } from "@/lib/posts";
 
 export async function GET(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { slug: string } }
 ) {
   const { slug } = params;
