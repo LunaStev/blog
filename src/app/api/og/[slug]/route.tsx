@@ -3,8 +3,12 @@ export const runtime = "nodejs";
 import { ImageResponse } from "@vercel/og";
 import { getPostBySlug } from "@/lib/posts";
 
-export async function GET(request: Request, { params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export async function GET(
+  request: Request,
+  context: { params: { slug: string } }
+) {
+  const slug = context.params.slug;
+  const post = getPostBySlug(slug);
 
   return new ImageResponse(
     (
@@ -21,7 +25,14 @@ export async function GET(request: Request, { params }: { params: { slug: string
           fontFamily: "Noto Serif KR",
         }}
       >
-        <div style={{ fontSize: 54, fontWeight: "bold", color: "#3a352e", marginBottom: 20 }}>
+        <div
+          style={{
+            fontSize: 54,
+            fontWeight: "bold",
+            color: "#3a352e",
+            marginBottom: 20,
+          }}
+        >
           {post.meta.title}
         </div>
 
