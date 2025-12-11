@@ -5,8 +5,8 @@ import { getPostBySlug } from "@/lib/posts";
 import type { NextRequest } from "next/server";
 
 export async function GET(
-  req: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
+  req: Request,
+  { params }: { params: { slug: string } }
 ) {
   const { slug } = await params;
 

@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
-export default function PostsPage() {
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const posts = getAllPosts();
 
   return (
