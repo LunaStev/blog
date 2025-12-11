@@ -406,7 +406,10 @@ export default async function LicensePage() {
           lineHeight: 1.5,
         }}
       >
-        {licenseText}
+      <article
+        className="markdown-body"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
       </pre>
     </div>
   );
