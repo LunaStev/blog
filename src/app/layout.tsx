@@ -17,6 +17,9 @@ export default function RootLayout({ children }) {
               <Link href="/" className="nav-link d-inline-block mx-2">Home</Link>
               <Link href="/about" className="nav-link d-inline-block mx-2">About</Link>
               <Link href="/posts" className="nav-link d-inline-block mx-2">Posts</Link>
+              <Link href="https://github.com/LunaStev" className="nav-link d-inline-block mx-2">GitHub</Link>
+              <Link href="https://discord.gg/3nev5nHqq9" className="nav-link d-inline-block mx-2">Discord</Link>
+              <Link href="mailto:luna@lunastev.org" className="nav-link d-inline-block mx-2">Email</Link>
             </div>
           </div>
         </nav>

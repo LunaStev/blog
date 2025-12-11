@@ -8,6 +8,9 @@ export default function Home() {
     <div>
       <p className="text-muted mb-5 blog-header-desc" style={{ fontSize: "1.15rem" }}>
         컴파일러, 운영체제, 프로그래밍 언어, 시스템 설계에 관심이 많은 개발자의 기술 블로그입니다.
+        <br />
+        <br />
+        연락이나 문의는 메일로 부탁드립니다: <a href="mailto:luna@lunastev.org">luna@lunastev.org</a>
       </p>
 
       <h2 className="fw-bold mb-3">Latest Posts</h2>

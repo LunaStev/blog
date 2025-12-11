@@ -10,8 +10,7 @@ export default function AboutPage() {
       </p>
 
       <p className="blog-text">
-        현재는 <code>Wave</code> 프로그래밍 언어와
-        <code>Whale</code> 컴파일러 툴체인, 그리고 OS 개발에도 관심을 두고
+        현재는 <code>Wave</code> 프로그래밍 언어와 <code>Whale</code> 컴파일러 툴체인, 그리고 OS 개발에도 관심을 두고
         다양한 프로젝트를 진행하고 있습니다.
       </p>
 
@@ -23,6 +22,10 @@ export default function AboutPage() {
 
       <p className="blog-text">
         방문해 주셔서 감사합니다 :)
+      </p>
+
+      <p className="blog-text">
+        연락 메일: <a href="mailto:luna@lunastev.org">luna@lunastev.org</a>
       </p>
     </div>
   );
