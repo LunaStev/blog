@@ -95,10 +95,6 @@ pre[class*="language-"] {
 .token.italic { font-style: italic; }
 .token.entity { cursor: help; }
 
-/* -----------------------------------------------------
-   GLOBAL BASE STYLE
------------------------------------------------------- */
-
 body {
   background-color: #faf7ef;
   background-repeat: repeat;
@@ -123,10 +119,6 @@ h1, h2, h3 {
   font-family: "Noto Serif KR", serif;
 }
 
-/* -----------------------------------------------------
-   LAYOUT WRAPPER
------------------------------------------------------- */
-
 .content-wrapper {
   background: rgba(255, 255, 255, 0.88);
   border: 1px solid #e5dcc5;
@@ -135,10 +127,6 @@ h1, h2, h3 {
   margin-bottom: 40px;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.05);
 }
-
-/* -----------------------------------------------------
-   NAVBAR
------------------------------------------------------- */
 
 .blog-navbar {
   background: #f5f0e3;
@@ -161,10 +149,6 @@ h1, h2, h3 {
   color: #2f2a25 !important;
 }
 
-/* -----------------------------------------------------
-   HOME HEADER
------------------------------------------------------- */
-
 .blog-header-title {
   font-size: 2.6rem;
   font-weight: bold;
@@ -177,20 +161,12 @@ h1, h2, h3 {
   font-size: 1.2rem;
 }
 
-/* -----------------------------------------------------
-   ABOUT PAGE TEXT
------------------------------------------------------- */
-
 .blog-text {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
   line-height: 1.8;
   color: #403a34;
 }
-
-/* -----------------------------------------------------
-   POST LIST (홈 화면의 글 목록)
------------------------------------------------------- */
 
 .post-item {
   padding: 20px;
@@ -205,10 +181,6 @@ h1, h2, h3 {
   background: rgba(255, 255, 255, 0.95);
   transform: translateY(-2px);
 }
-
-/* -----------------------------------------------------
-   MARKDOWN STYLE (본문)
------------------------------------------------------- */
 
 .markdown-body {
   font-size: 1.1rem;
@@ -239,7 +211,6 @@ h1, h2, h3 {
   color: #6a6258;
 }
 
-/* --- 볼드 & 이탤릭 --- */
 .markdown-body strong {
   font-weight: bold;
   color: #3a332b;
@@ -259,7 +230,6 @@ h1, h2, h3 {
   color: #153a8f;
 }
 
-/* --- 블록 인용문 --- */
 .markdown-body blockquote {
   margin: 20px 0;
   padding: 12px 20px;
@@ -269,14 +239,12 @@ h1, h2, h3 {
   border-radius: 6px;
 }
 
-/* --- 수평선(HR) --- */
 .markdown-body hr {
   border: none;
   border-bottom: 2px solid #d4c6aa;
   margin: 32px 0;
 }
 
-/* --- 이미지 --- */
 .markdown-body img {
   max-width: 100%;
   border-radius: 10px;
@@ -284,7 +252,6 @@ h1, h2, h3 {
   border: 1px solid #e0d8c7;
 }
 
-/* --- 표 (Tables) --- */
 .markdown-body table {
   width: 100%;
   border-collapse: collapse;
@@ -303,13 +270,11 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-/* --- 체크박스 리스트(Task List) --- */
 .markdown-body input[type="checkbox"] {
   margin-right: 8px;
   transform: scale(1.2);
 }
 
-/* --- 정의 리스트(DL) --- */
 .markdown-body dl {
   margin: 16px 0;
 }
@@ -330,12 +295,8 @@ h1, h2, h3 {
   scroll-margin-top: 80px;
 }
 
-/* -----------------------------------------------------
-   CUSTOM PRISM OVERRIDES (Vim/Gruvbox 느낌)
------------------------------------------------------- */
-
 .markdown-body pre[class*="language-"] {
-  background: #2f3129 !important;       /* 다크 그린/브라운톤 */
+  background: #2f3129 !important;
   padding: 16px 20px;
   border-radius: 8px;
   overflow-x: auto;
@@ -359,7 +320,6 @@ h1, h2, h3 {
   font-size: 0.92rem;
 }
 
-/* Prism token overrides */
 .token.string { color: #a8e0a5 !important; }
 .token.keyword { color: #82aaff !important; }
 .token.function { color: #ffd580 !important; }
