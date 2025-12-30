@@ -14,12 +14,13 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  const siteUrl = "https://blog.lunastev.org";
 
   return {
     title: post.meta.title,
     openGraph: {
       title: post.meta.title,
-      images: [`/api/og/${post.slug}`],
+      images: [`${siteUrl}/api/og/${post.slug}`],
     },
   };
 }
