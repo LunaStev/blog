@@ -1,16 +1,14 @@
 // src/app/api/og/[slug]/route.tsx
-import type { NextRequest } from "next/server";
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 import { getPostBySlug } from "@/lib/posts";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 export async function GET(
-  req: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
+  req: Request,
+  { params }: { params: { slug: string } }
 ) {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(params.slug);
 
   return new ImageResponse(
     (
@@ -24,7 +22,7 @@ export async function GET(
           padding: "60px",
           justifyContent: "center",
           border: "6px solid #d8ceb6",
-          fontFamily: "Noto Serif KR",
+          fontFamily: "serif",
         }}
       >
         <div
@@ -38,7 +36,9 @@ export async function GET(
           {post.meta.title}
         </div>
 
-        <div style={{ fontSize: 32, color: "#6a6258" }}>by LunaStev</div>
+        <div style={{ fontSize: 32, color: "#6a6258" }}>
+          by LunaStev
+        </div>
       </div>
     ),
     {
