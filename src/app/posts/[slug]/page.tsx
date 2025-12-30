@@ -42,9 +42,9 @@ export default async function PostPage({
 
   const file = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypePrism)
-    .use(remarkGfm)
     .use(rehypeStringify)
     .process(post.content);
 
