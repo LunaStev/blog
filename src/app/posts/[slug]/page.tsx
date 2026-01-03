@@ -18,12 +18,29 @@ export async function generateMetadata({
 
   return {
     title: post.meta.title,
+    description: post.meta.description,
+
+    alternates: {
+      canonical: `${siteUrl}/posts/${post.slug}`,
+    },
+
     openGraph: {
+      type: "article",
       title: post.meta.title,
+      description: post.meta.description,
+      url: `${siteUrl}/posts/${post.slug}`,
+      images: [`${siteUrl}/api/og/${post.slug}`],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: post.meta.title,
+      description: post.meta.description,
       images: [`${siteUrl}/api/og/${post.slug}`],
     },
   };
 }
+
 
 export function generateStaticParams() {
   const posts = getAllPosts();
@@ -51,8 +68,31 @@ export default async function PostPage({
 
   const contentHtml = String(file);
 
-  return (
+  return (    
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Posts",
+                item: "https://blog.lunastev.org/posts",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: post.meta.title,
+                item: `https://blog.lunastev.org/posts/${post.slug}`,
+              },
+            ],
+          }),
+        }}
+      />
       <h1 className="fw-bold mb-2">{post.meta.title}</h1>
       <p className="text-muted mb-4">{post.meta.date}</p>
 
